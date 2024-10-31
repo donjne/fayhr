@@ -3,30 +3,28 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, User, Mail, Lock, Eye, EyeOff } from 'lucide-react'
+import { ArrowLeft, Mail, Lock, Eye, EyeOff } from 'lucide-react'
 
-export default function SignUp() {
+export default function Login() {
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
-    fullName: '',
     email: '',
     password: '',
-    agreeTerms: false
   })
   const router = useRouter()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target
+    const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: value
     }))
   }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData)
+    // Here you would typically send the login data to your backend
+    console.log('Login attempted:', formData)
     // Redirect to home page or show success message
     router.push('/home')
   }
@@ -40,23 +38,10 @@ export default function SignUp() {
           <ArrowLeft className="w-6 h-6" />
         </button>
 
-        <h1 className="text-4xl font-bold mb-2">Create Account.</h1>
-        <p className="text-xl mb-8">Join a community<br />Let&apos;s fund together!</p>
+        <h1 className="text-4xl font-bold mb-2">Let&apos;s Sign you in.</h1>
+        <p className="text-xl mb-8">Welcome back.<br />You&apos;ve been missed!</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="relative">
-            <input
-              type="text"
-              name="fullName"
-              placeholder="Full name"
-              value={formData.fullName}
-              onChange={handleInputChange}
-              className="w-full p-3 pl-10 border rounded-lg"
-              required
-            />
-            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          </div>
-
           <div className="relative">
             <input
               type="email"
@@ -90,33 +75,18 @@ export default function SignUp() {
             </button>
           </div>
 
-          <div className="flex items-center">
-            <input
-              type="checkbox"
-              name="agreeTerms"
-              id="agreeTerms"
-              checked={formData.agreeTerms}
-              onChange={handleInputChange}
-              className="mr-2"
-              required
-            />
-            <label htmlFor="agreeTerms" className="text-sm text-gray-600">
-              I agree to the terms and conditions
-            </label>
-          </div>
-
           <button
             type="submit"
             className="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold"
           >
-            Sign Up
+            Log In
           </button>
         </form>
 
         <p className="text-center mt-6">
-          Already a member?{' '}
-          <Link href="/login" className="text-blue-500 font-semibold">
-            Log in
+          Don&apos;t have an account?{' '}
+          <Link href="/signup" className="text-blue-500 font-semibold">
+            Sign Up
           </Link>
         </p>
       </div>

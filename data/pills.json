@@ -1,0 +1,54 @@
+{
+  "pills": [
+    {
+      "icon": "Wallet",
+      "text": "Wallet",
+      "variant": "blue"
+    },
+    {
+      "icon": "Users",
+      "text": "Community",
+      "variant": "blue"
+    },
+    {
+      "icon": "Footprints",
+      "text": "Beauty",
+      "variant": "purple"
+    },
+    {
+      "icon": "Glasses",
+      "text": "Style",
+      "variant": "blue"
+    },
+    {
+      "icon": "ShoppingBag",
+      "text": "Fashion",
+      "variant": "yellow"
+    },
+    {
+      "icon": "Heart",
+      "text": "Love",
+      "variant": "darkBlue"
+    },
+    {
+      "icon": "ShoppingCart",
+      "text": "Shopping",
+      "variant": "blue"
+    },
+    {
+      "icon": "PiggyBank",
+      "text": "Savings",
+      "variant": "purple"
+    },
+    {
+      "icon": "Flower",
+      "text": "Beauty",
+      "variant": "darkBlue"
+    },
+    {
+      "icon": "Boxes",
+      "text": "Technology",
+      "variant": "blue"
+    }
+  ]
+} 
